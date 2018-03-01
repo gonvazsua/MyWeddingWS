@@ -1,6 +1,6 @@
 var port 			      = process.env.ALWAYSDATA_HTTPD_PORT || 3000;
 var host 			      = process.env.ALWAYSDATA_HTTPD_IP || 'localhost';
-var env  			      = require('./environment');
+var env  			      = require('./environment/environment');
 var express 		    = require("express"),
     app 			      = express(),
     bodyParser  	  = require("body-parser"),
