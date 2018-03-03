@@ -11,6 +11,10 @@ var userSchema 	= new Schema({
   useBus:     	{ type: Boolean },
   allergies: 	  { type: Array },
   isAdmin:  	  { type: Boolean },
+  address:      { type: String },
+  city:         { type: String },
+  postalCode:   { type: Number },
+  companion:    { type: String },
   lastLogin:    { type: Date }
 });
 

@@ -24,7 +24,11 @@ exports.addUser = function(req, res) {
 		isConfirmed:    req.body.isConfirmed,
 		isActive:     	req.body.isActive,
 		useBus:     	req.body.useBus,
-		allergies: 		req.body.allergies
+		allergies: 		req.body.allergies,
+		lastLogin:		new Date(),
+		address:		req.body.address,
+		city:			req.body.city,
+		postalCode:		req.body.postalCode
 	});
 	user.save(function(err, user){
 		if(err) res.send(500, err.message);
@@ -44,6 +48,10 @@ exports.update = function(req, res) {
 		user.useBus			= req.body.useBus;
 		user.allergies		= req.body.allergies;
 		user.isAdmin		= req.body.isAdmin;
+		user.address		= req.body.address;
+		user.city			= req.body.city;
+		user.postalCode		= req.body.postalCode;
+		user.companion		= req.body.companion;
 
 		user.save(function(err, user){
 			if(err) res.send(500, err.message);

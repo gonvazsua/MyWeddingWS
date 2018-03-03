@@ -21,6 +21,9 @@ exports.authenticate = function(req, res){
 				res.json({ success: false, message: 'Password incorrecta' });
 			} else {
 
+				user.lastLogin = new Date();
+				user.save();
+
 				var payload = {
 					email: user.email,
 					admin: user.isAdmin
