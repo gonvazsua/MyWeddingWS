@@ -12,6 +12,7 @@ var express 		    = require("express"),
     auths 			    = require('./routes/auth'),
     users 			    = require('./routes/user'),
     allergies 		  = require('./routes/allergy');
+    comments 		    = require('./routes/comment');
 
 
 //Connection to BD
@@ -56,6 +57,9 @@ app.use('/users', users);
 
 //API Allergies
 app.use('/allergies', allergies);
+
+//API Comments
+app.use('/comments', comments);
 
 //Handle errors
 app.use(function (err, req, res, next) {
