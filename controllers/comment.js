@@ -3,6 +3,7 @@ var Comment 			= mongoose.model('Comment');
 
 exports.findAll = function(req, res) {
 	Comment.find({}).
+	sort([['creationDate', 'descending']]).
 	populate('user').
 	exec(function(err, comments) {
 		if(err) res.send(500, err.message);
