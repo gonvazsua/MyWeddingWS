@@ -31,10 +31,8 @@ exports.addComment = function(req, res) {
 };
 
 exports.delete = function(req, res) {
-	Comment.remove({
-        _id:         req.body._id,
-	}, function(err, comment){
+	Comment.findByIdAndRemove(req.params.id, function(err){
 		if(err) res.send(500, err.message);
-		res.status(200);
-	});
+		res.send(200);
+	});	
 };
